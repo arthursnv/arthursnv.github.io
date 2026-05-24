@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anh Nguyen — QA/QC Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0ea5e9;
+      --dark: #0f172a;
+      --gray-800: #1e293b;
+      --gray-600: #475569;
+      --gray-400: #94a3b8;
+      --gray-100: #f1f5f9;
+      --white: #ffffff;
+      --green: #10b981;
+      --radius: 12px;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-100); color: var(--dark); line-height: 1.6; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    header { background: linear-gradient(135deg, var(--dark) 0%, var(--gray-800) 100%); color: var(--white); padding: 60px 0 40px; }
+    .header-inner { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .avatar { width: 100px; height: 100px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: white; flex-shrink: 0; border: 3px solid var(--accent); }
+    .header-info h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
+    .header-info .title { color: var(--accent); font-size: 1rem; font-weight: 500; margin-bottom: 12px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .contact-links a { color: var(--gray-400); font-size: 0.85rem; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .contact-links a:hover { color: var(--white); text-decoration: none; }
+    .badge-ai { display: inline-flex; align-items: center; gap: 6px; background: rgba(14,165,233,0.15); border: 1px solid var(--accent); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin-top: 10px; }
+
+    /* Nav */
+    nav { background: var(--white); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    nav ul { display: flex; list-style: none; gap: 0; }
+    nav ul li a { display: block; padding: 14px 20px; font-size: 0.88rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s, border-bottom 0.2s; border-bottom: 2px solid transparent; }
+    nav ul li a:hover, nav ul li a.active { color: var(--primary); border-bottom-color: var(--primary); text-decoration: none; }
+
+    /* Main */
+    main { padding: 40px 0 60px; }
+    .grid { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
+    section { background: var(--white); border-radius: var(--radius); padding: 28px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    section h2 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--gray-100); display: flex; align-items: center; gap: 8px; }
+    section h2 .icon { font-size: 1.1rem; }
+
+    /* Summary */
+    .summary-text { color: var(--gray-600); font-size: 0.95rem; line-height: 1.8; }
+
+    /* Experience */
+    .exp-item { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--gray-100); }
+    .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+    .exp-company { font-weight: 700; font-size: 1rem; color: var(--dark); }
+    .exp-role { font-weight: 600; color: var(--primary); font-size: 0.95rem; }
+    .exp-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px; }
+    .tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .tag-date { background: var(--gray-100); color: var(--gray-600); }
+    .tag-domain { background: #eff6ff; color: var(--primary); }
+    .tag-current { background: #d1fae5; color: #065f46; }
+    .tag-team { background: #fef3c7; color: #92400e; }
+    .exp-list { list-style: none; padding: 0; }
+    .exp-list li { font-size: 0.88rem; color: var(--gray-600); padding: 3px 0 3px 16px; position: relative; line-height: 1.6; }
+    .exp-list li::before { content: '▸'; position: absolute; left: 0; color: var(--primary); font-size: 0.75rem; top: 5px; }
+    .achievements { margin-top: 10px; background: #f0fdf4; border-radius: 8px; padding: 10px 14px; }
+    .achievements li::before { color: var(--green) !important; }
+    .achievements li { color: #166534 !important; font-weight: 500; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tech-tag { background: var(--gray-100); color: var(--gray-600); padding: 2px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 500; }
+
+    /* Skills sidebar */
+    .skill-bar-wrap { margin-bottom: 12px; }
+    .skill-bar-label { display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 500; margin-bottom: 4px; color: var(--dark); }
+    .skill-bar-bg { background: var(--gray-100); border-radius: 4px; height: 7px; overflow: hidden; }
+    .skill-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width 1s ease; }
+    .skill-list { list-style: none; }
+    .skill-list li { font-size: 0.83rem; color: var(--gray-600); padding: 4px 0; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 6px; }
+    .skill-list li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 0.75rem; }
+    .db-tags, .lang-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .db-tag { background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 500; }
+    .lang-tag { background: #ede9fe; color: #5b21b6; padding: 3px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 500; }
+
+    /* AI section */
+    .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ai-card { background: var(--gray-100); border-radius: 8px; padding: 12px; }
+    .ai-card .ai-num { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .ai-card .ai-label { font-size: 0.78rem; color: var(--gray-600); margin-top: 2px; }
+
+    /* Education */
+    .edu-item { display: flex; align-items: center; gap: 14px; }
+    .edu-icon { width: 44px; height: 44px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .edu-info .school { font-weight: 600; font-size: 0.95rem; }
+    .edu-info .degree { font-size: 0.83rem; color: var(--gray-600); }
+
+    /* Language */
+    .lang-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--gray-100); }
+    .lang-item:last-child { border-bottom: none; }
+    .lang-name { font-weight: 500; font-size: 0.9rem; }
+    .lang-level { font-size: 0.8rem; color: var(--gray-600); background: var(--gray-100); padding: 2px 10px; border-radius: 20px; }
+
+    /* Footer */
+    footer { background: var(--dark); color: var(--gray-400); text-align: center; padding: 20px; font-size: 0.82rem; }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; text-align: center; }
+      .contact-links { justify-content: center; }
+      nav ul { overflow-x: auto; }
+      nav ul li a { padding: 12px 14px; white-space: nowrap; }
+      .ai-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <div class="avatar">AN</div>
+      <div class="header-info">
+        <h1>Anh Nguyen</h1>
+        <div class="title">QA/QC Engineer | Automation Testing Specialist</div>
+        <div class="contact-links">
+          <a href="mailto:arthursnv68@gmail.com">📧 arthursnv68@gmail.com</a>
+          <a href="tel:0986389267">📞 0986 389 267</a>
+          <a href="https://www.linkedin.com/in/arthursnv/" target="_blank">🔗 linkedin.com/in/arthursnv</a>
+          <span style="color:var(--gray-400);font-size:0.85rem;">📍 Hà Nội, Việt Nam</span>
+        </div>
+        <div class="badge-ai">🤖 AI Maturity Level 5/5 — Enterprise Integration Specialist</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#summary">Tóm tắt</a></li>
+      <li><a href="#experience">Kinh nghiệm</a></li>
+      <li><a href="#skills">Kỹ năng</a></li>
+      <li><a href="#ai">AI Profile</a></li>
+      <li><a href="#education">Học vấn</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="grid">
+
+      <!-- LEFT COLUMN -->
+      <div>
+
+        <!-- Summary -->
+        <section id="summary">
+          <h2><span class="icon">👤</span> Tóm tắt</h2>
+          <p class="summary-text">
+            QA/QC Engineer với <strong>10+ năm kinh nghiệm</strong> trong automation testing, API testing,
+            và platform quality assurance trên nhiều domain: <strong>Banking/Fintech, eCommerce,</strong>
+            và <strong>Game Publishing</strong>. Có kinh nghiệm thực tế kiểm thử authentication flows,
+            payment integration, billing systems, và role-based access control. Thành thạo xây dựng
+            automation framework từ đầu, tích hợp CI/CD pipeline, và phối hợp cross-functional với
+            PO/BA, Backend, DevOps, Security teams. Áp dụng BDD, Page Object Model, và
+            AI-enhanced workflows để đảm bảo release quality trong môi trường Agile.
+          </p>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+          <h2><span class="icon">💼</span> Kinh nghiệm làm việc</h2>
+
+          <!-- Techcombank -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Techcombank</div>
+                <div class="exp-role">Senior Quality Engineer</div>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-current">🟢 Hiện tại</span>
+              <span class="tag tag-date">📅 Aug 2022 – Present</span>
+              <span class="tag tag-domain">🏦 Banking & Financial Services</span>
+              <span class="tag tag-team">Full-time</span>
+            </div>
+            <ul class="exp-list">
+              <li>Xây dựng <strong>Automation framework sử dụng Karate</strong>, bao gồm test strategy, regression suite, và release quality checklist cho các hệ thống core banking</li>
+              <li>Kết hợp <strong>Playwright framework</strong> để automation cho hệ thống Web App <strong>Oracle ERP</strong></li>
+              <li>Kiểm thử <strong>authentication flows, payment integration, và role-based access control</strong> trên các platform tài chính enterprise</li>
+              <li>Tích hợp <strong>GitLab CI pipeline</strong> cho automated testing, đảm bảo quality gate trước mỗi release</li>
+              <li>Phối hợp với PO/BA, Backend, DevOps, và Security teams để cải thiện chất lượng sản phẩm</li>
+              <li>Chuẩn bị test summary reports và hỗ trợ UAT cho business users trước release sign-off</li>
+              <li>Mentor và hướng dẫn team <strong>5+ QE engineers</strong> sử dụng Automation và AI</li>
+            </ul>
+            <ul class="exp-list achievements">
+              <li>Tăng <strong>30–50%</strong> productivity nhờ tích hợp AI vào quy trình làm việc</li>
+              <li>Giảm <strong>83%</strong> thời gian information retrieval (30 phút → 5 phút) qua AI-enhanced workflows</li>
+              <li>Giảm <strong>85%</strong> thời gian compliance checking (1 giờ → 10 phút)</li>
+              <li>Giảm <strong>~80%</strong> re-work errors</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Karate</span><span class="tech-tag">Playwright</span>
+              <span class="tech-tag">GitLab CI</span><span class="tech-tag">BDD</span>
+              <span class="tech-tag">Java</span><span class="tech-tag">Oracle ERP</span>
+              <span class="tech-tag">Jira</span><span class="tech-tag">Confluence</span>
+            </div>
+          </div>
+
+          <!-- OCG -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Open Commerce Group</div>
+                <div class="exp-role">Automation Test Lead</div>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-date">📅 2021 – 2022</span>
+              <span class="tag tag-domain">🛒 eCommerce</span>
+              <span class="tag tag-team">Full-time | Team: 15 | QE: 7</span>
+            </div>
+            <ul class="exp-list">
+              <li>Quản lý và dẫn dắt team <strong>7 QE engineers</strong>, đảm bảo automation coverage đạt trung bình <strong>80%</strong> trên toàn platform</li>
+              <li>Kiểm thử platform eCommerce bao gồm analytics, sales channels, <strong>balance, và billing</strong></li>
+              <li>Xây dựng automation test framework sử dụng Cucumber Selenium, Postman, SoapUI</li>
+              <li>Lập kế hoạch, ước lượng, và điều phối test activities cho toàn team</li>
+              <li>Config CI/CD pipeline (Jenkins), training testers về automation testing và tools</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Cucumber Selenium</span><span class="tech-tag">Postman</span>
+              <span class="tech-tag">SoapUI</span><span class="tech-tag">Jenkins</span>
+              <span class="tech-tag">MySQL</span><span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Funtap -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Funtap</div>
+                <div class="exp-role">Automation Test Lead / QC Lead</div>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-date">📅 2018 – 2021</span>
+              <span class="tag tag-domain">🎮 Game Publishing — Payment Services</span>
+              <span class="tag tag-team">Full-time | Team: 14</span>
+            </div>
+            <ul class="exp-list">
+              <li>Kiểm thử <strong>payment services, giftcodes, và reporting systems</strong> cho nền tảng game publishing hàng đầu Việt Nam</li>
+              <li>Automated <strong>payment redirect flows</strong> — đảm bảo tính chính xác và ổn định của toàn bộ luồng thanh toán từ game client đến payment gateway</li>
+              <li>Xây dựng automation framework với Cucumber Selenium, Postman, SoapUI</li>
+              <li>Config CI/CD, training testers, sử dụng MySQL/PostgreSQL cho database testing</li>
+            </ul>
+            <div class="tech-tags">
+              <span class="tech-tag">Cucumber Selenium</span><span class="tech-tag">Postman</span>
+              <span class="tech-tag">SoapUI</span><span class="tech-tag">MySQL</span>
+              <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Jenkins</span>
+            </div>
+          </div>
+
+          <!-- Horus -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Horus Entertainment</div>
+                <div class="exp-role">QC Lead</div>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-date">📅 2017 – 2018</span>
+              <span class="tag tag-domain">🎮 Game Publishing (e-Sport & MMO)</span>
+              <span class="tag tag-team">Full-time | Team: 8</span>
+            </div>
+            <ul class="exp-list">
+              <li>Thiết kế và cải thiện quality standards cho sản phẩm game</li>
+              <li>Training, coaching QA members để đảm bảo standards được tuân thủ</li>
+              <li>Xây dựng chiến lược tăng productivity và review processes</li>
+            </ul>
+          </div>
+
+          <!-- Gameloft -->
+          <div class="exp-item">
+            <div class="exp-header">
+              <div>
+                <div class="exp-company">Gameloft</div>
+                <div class="exp-role">Mobile Tester</div>
+              </div>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-date">📅 2015 – 2017</span>
+              <span class="tag tag-domain">🌍 Mobile Game Publishing (Global)</span>
+              <span class="tag tag-team">Full-time | Team: 10+</span>
+            </div>
+            <ul class="exp-list">
+              <li>Kiểm thử game functionality, graphics, logic, game design, và content tại công ty game mobile hàng đầu thế giới</li>
+              <li>Báo cáo bugs và quản lý issues trong project management system</li>
+              <li>Tuân thủ testing processes, checklists, và standard requirements của Gameloft</li>
+            </ul>
+          </div>
+
+        </section><!-- end experience -->
+
+      </div><!-- end left column -->
+
+      <!-- RIGHT COLUMN -->
+      <div>
+
+        <!-- Skills: Automation -->
+        <section id="skills">
+          <h2><span class="icon">⚙️</span> Automation Tools</h2>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Karate</span><span>95%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Playwright</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Serenity + Cucumber</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Postman / SoapUI</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Jenkins / GitLab CI</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+        </section>
+
+        <!-- Skills: Languages -->
+        <section>
+          <h2><span class="icon">💻</span> Programming</h2>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Java</span><span>90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>JavaScript</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>TypeScript</span><span>75%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>C# / .NET</span><span>65%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:65%"></div></div>
+          </div>
+        </section>
+
+        <!-- Databases -->
+        <section>
+          <h2><span class="icon">🗄️</span> Databases</h2>
+          <div class="db-tags">
+            <span class="db-tag">MySQL</span>
+            <span class="db-tag">PostgreSQL</span>
+            <span class="db-tag">MongoDB</span>
+            <span class="db-tag">SQLite</span>
+          </div>
+        </section>
+
+        <!-- Methodologies -->
+        <section>
+          <h2><span class="icon">📐</span> Methodologies</h2>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Page Object Model</span><span>95%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>BDD</span><span>90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-label"><span>Agile / Scrum</span><span>85%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+          </div>
+        </section>
+
+        <!-- AI Profile -->
+        <section id="ai">
+          <h2><span class="icon">🤖</span> AI Profile</h2>
+          <div class="ai-grid">
+            <div class="ai-card">
+              <div class="ai-num">83%</div>
+              <div class="ai-label">Info retrieval time saved</div>
+            </div>
+            <div class="ai-card">
+              <div class="ai-num">85%</div>
+              <div class="ai-label">Compliance check time saved</div>
+            </div>
+            <div class="ai-card">
+              <div class="ai-num">80%</div>
+              <div class="ai-label">Re-work errors reduced</div>
+            </div>
+            <div class="ai-card">
+              <div class="ai-num">L5/5</div>
+              <div class="ai-label">AI Maturity Level</div>
+            </div>
+          </div>
+          <ul class="skill-list" style="margin-top:14px">
+            <li>MCP (Model Context Protocol) — Expert</li>
+            <li>AI Agent Automation & Test Case Generation</li>
+            <li>Jira ↔ Confluence cross-system integration</li>
+            <li>Automated compliance checking</li>
+          </ul>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+          <h2><span class="icon">🎓</span> Học vấn</h2>
+          <div class="edu-item">
+            <div class="edu-icon">🏫</div>
+            <div class="edu-info">
+              <div class="school">FPT APTECH</div>
+              <div class="degree">Aptech Certified Computer Professional</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Languages -->
+        <section>
+          <h2><span class="icon">🌐</span> Ngôn ngữ</h2>
+          <div class="lang-item">
+            <span class="lang-name">🇻🇳 Tiếng Việt</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">🇬🇧 English</span>
+            <span class="lang-level">Professional working</span>
+          </div>
+        </section>
+
+      </div><!-- end right column -->
+
+    </div><!-- end grid -->
+  </div><!-- end container -->
+</main>
+
+<footer>
+  <p>© 2026 Anh Nguyen · arthursnv68@gmail.com · 0986 389 267</p>
+</footer>
+
+<script>
+  // Smooth scroll + active nav
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Animate skill bars on load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      const w = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => { bar.style.width = w; }, 200);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+{
+  "personal": {
+    "name": "Anh Nguyen",
+    "title": "QA/QC Engineer | Automation Testing Specialist",
+    "email": "arthursnv68@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/arthursnv/",
+    "phone": "0986389267",
+    "location": "Hà Nội, Việt Nam",
+    "summary": "QA/QC Engineer với 10+ năm kinh nghiệm trong automation testing, API testing, và platform quality assurance trên nhiều domain: Banking/Fintech, eCommerce, và Game Publishing. Có kinh nghiệm thực tế kiểm thử authentication flows, payment integration, billing systems, và role-based access control. Thành thạo xây dựng automation framework từ đầu, tích hợp CI/CD pipeline, và phối hợp cross-functional với PO/BA, Backend, DevOps, Security teams. Áp dụng BDD, Page Object Model, và AI-enhanced workflows để đảm bảo release quality trong môi trường Agile.",
+    "ai_maturity": "Level 5/5 - Advanced",
+    "ai_role": "Enterprise Integration Specialist"
+  },
+  "skills": {
+    "testing": [
+      "Test Strategy & Test Planning (BRD/User Stories)",
+      "Functional Testing, Integration Testing, API Testing",
+      "Regression Testing, Smoke Testing, Compatibility Testing",
+      "Authentication Flow Testing, Payment Integration Testing",
+      "Role-Based Access Testing, UAT Support",
+      "Defect Management (severity/prioritization/retest/closure)",
+      "Release Sign-off, Requirement Traceability"
+    ],
+    "automation": [
+      { "name": "Karate", "level": 95, "note": "API automation (Expert)" },
+      { "name": "Playwright", "level": 85, "note": "UI/E2E automation" },
+      { "name": "Serenity + Cucumber", "level": 85, "note": "BDD framework" },
+      { "name": "Cucumber Selenium", "level": 85, "note": "BDD framework" },
+      { "name": "Postman", "level": 85, "note": "API testing & exploration" },
+      { "name": "SoapUI", "level": 80, "note": "API testing" },
+      { "name": "Jira", "level": 85, "note": "Defect tracking & project management" },
+      { "name": "Jenkins", "level": 80, "note": "CI/CD pipeline" },
+      { "name": "GitLab CI", "level": 80, "note": "CI/CD pipeline" },
+      { "name": "Maven", "level": 85, "note": "Build & dependency management" }
+    ],
+    "languages": [
+      { "name": "Java", "level": 90 },
+      { "name": "JavaScript", "level": 80 },
+      { "name": "TypeScript", "level": 75 },
+      { "name": "C# / .NET", "level": 65 }
+    ],
+    "databases": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    "source_control": ["Git", "GitHub", "GitLab", "SVN"],
+    "methodologies": [
+      { "name": "Page Object Model", "level": 95 },
+      { "name": "BDD", "level": 90 },
+      { "name": "Agile/Scrum", "level": 85 }
+    ],
+    "ai_tools": [
+      "MCP (Model Context Protocol) - Expert",
+      "AI Agent Automation & Test Case Generation",
+      "Jira, Confluence, Xmind",
+      "Cross-system integration (Jira ↔ Confluence)"
+    ]
+  },
+  "experience": [
+    {
+      "id": "techcombank",
+      "company": "Techcombank",
+      "role": "Senior Quality Engineer",
+      "type": "Full-time",
+      "domain": "Banking & Financial Services",
+      "location": "Hà Nội",
+      "startDate": "2022-08",
+      "endDate": null,
+      "isCurrent": true,
+      "teamSize": null,
+      "responsibilities": [
+        "Xây dựng Automation framework sử dụng Karate, bao gồm test strategy, regression suite, và release quality checklist cho các hệ thống core banking",
+        "Kết hợp Playwright framework để automation cho hệ thống Web App Oracle ERP",
+        "Kiểm thử authentication flows, payment integration, và role-based access control trên các platform tài chính enterprise",
+        "Tích hợp GitLab CI pipeline cho automated testing, đảm bảo quality gate trước mỗi release",
+        "Phối hợp với PO/BA, Backend, DevOps, và Security teams để cải thiện chất lượng sản phẩm",
+        "Chuẩn bị test summary reports và hỗ trợ UAT cho business users trước release sign-off",
+        "Mentor và hướng dẫn team 5+ QE engineers sử dụng Automation và AI"
+      ],
+      "achievements": [
+        "Tăng 30–50% productivity nhờ tích hợp AI vào quy trình làm việc",
+        "Giảm 83% thời gian information retrieval (30 phút → 5 phút) qua AI-enhanced workflows",
+        "Giảm 85% thời gian compliance checking (1 giờ → 10 phút)",
+        "Giảm ~80% re-work errors"
+      ],
+      "technologies": ["Karate", "Playwright", "GitLab CI", "BDD", "Java", "Oracle ERP", "Jira", "Confluence"]
+    },
+    {
+      "id": "ocg",
+      "company": "Open Commerce Group",
+      "role": "Automation Test Lead",
+      "type": "Full-time",
+      "domain": "eCommerce (Dropshipping, Print-on-Demand)",
+      "location": "Hà Nội",
+      "startDate": "2021-01",
+      "endDate": "2022",
+      "isCurrent": false,
+      "teamSize": 15,
+      "qeManaged": 7,
+      "automationCoverage": 80,
+      "responsibilities": [
+        "Quản lý và dẫn dắt team 7 QE engineers, đảm bảo automation coverage đạt trung bình 80% trên toàn platform",
+        "Kiểm thử platform eCommerce bao gồm analytics, sales channels, balance, và billing",
+        "Xây dựng automation test framework sử dụng Cucumber Selenium, Postman, SoapUI",
+        "Lập kế hoạch, ước lượng, và điều phối test activities cho toàn team",
+        "Phát triển test plan, test cases, test scripts, và quản lý execution",
+        "Config CI/CD pipeline (Jenkins)",
+        "Training testers về automation testing và tools",
+        "Quản lý tiến độ team, kiểm soát và monitor test results"
+      ],
+      "technologies": ["Cucumber Selenium", "Postman", "SoapUI", "Jenkins", "Java", "JavaScript", "MySQL", "PostgreSQL"]
+    },
+    {
+      "id": "funtap",
+      "company": "Funtap",
+      "role": "Automation Test Lead / QC Lead",
+      "type": "Full-time",
+      "domain": "Game Publishing — Payment Services",
+      "location": "Hà Nội",
+      "startDate": "2018-01",
+      "endDate": "2021-01",
+      "isCurrent": false,
+      "teamSize": 14,
+      "responsibilities": [
+        "Kiểm thử payment services, giftcodes, và reporting systems cho nền tảng game publishing hàng đầu Việt Nam",
+        "Automated payment redirect flows — đảm bảo tính chính xác và ổn định của toàn bộ luồng thanh toán từ game client đến payment gateway",
+        "Xây dựng automation framework với Cucumber Selenium, Postman, SoapUI",
+        "Phát triển test plan, test cases, test methodology và quản lý execution",
+        "Config CI/CD, training testers về automation tools",
+        "Sử dụng MySQL, PostgreSQL cho database testing và data validation"
+      ],
+      "technologies": ["Cucumber Selenium", "Postman", "SoapUI", "Jenkins", "Java", "JavaScript", "MySQL", "PostgreSQL"]
+    },
+    {
+      "id": "horus",
+      "company": "Horus Entertainment",
+      "role": "QC Lead",
+      "type": "Full-time",
+      "domain": "Game Publishing (e-Sport & MMO Mobile Games)",
+      "location": "Hà Nội",
+      "startDate": "2017-01",
+      "endDate": "2018-01",
+      "isCurrent": false,
+      "teamSize": 8,
+      "responsibilities": [
+        "Thiết kế và cải thiện quality standards cho sản phẩm game",
+        "Training, coaching QA members để đảm bảo standards được tuân thủ",
+        "Xây dựng chiến lược tăng productivity và review processes",
+        "Tạo reports theo dõi tiến độ và chất lượng sản phẩm"
+      ],
+      "technologies": ["Trello", "Google Drive"]
+    },
+    {
+      "id": "gameloft",
+      "company": "Gameloft",
+      "role": "Mobile Tester",
+      "type": "Full-time",
+      "domain": "Mobile Game Publishing (Global)",
+      "location": "Hà Nội",
+      "startDate": "2015-01",
+      "endDate": "2017-01",
+      "isCurrent": false,
+      "teamSize": 10,
+      "responsibilities": [
+        "Kiểm thử game functionality, graphics, logic, game design, và content tại công ty game mobile hàng đầu thế giới",
+        "Báo cáo bugs và quản lý issues trong project management system",
+        "Tuân thủ testing processes, checklists, và standard requirements của Gameloft"
+      ],
+      "technologies": ["Bug Tracking System"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "FPT APTECH",
+      "degree": "Aptech Certified Computer Professional",
+      "year": null
+    }
+  ],
+  "languages": [
+    { "language": "Tiếng Việt", "level": "Native" },
+    { "language": "English", "level": "Professional working proficiency" }
+  ]
+}
